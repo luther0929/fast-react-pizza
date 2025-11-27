@@ -4,9 +4,10 @@ import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { getCart, clearCart } from "./cartSlice";
 import EmptyCart from "./EmptyCart";
+import { getUsername } from "../user/userSlice";
 
 function Cart() {
-  const username = useSelector((state) => state.user.username);
+  const username = useSelector(getUsername);
   const cart = useSelector(getCart);
   const dispatch = useDispatch();
 
