@@ -6,8 +6,9 @@ import margherita from "../../assets/margherita.jpg";
 import prosciutto from "../../assets/prosciutto.jpg";
 import salamino from "../../assets/salamino.jpg";
 import spinaci from "../../assets/spinaci.jpg";
-import { useDispatch } from "react-redux";
-import { addItem } from "../cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, getCurrentQuantityById } from "../cart/cartSlice";
+import DeleteItem from "../cart/DeleteItem";
 
 const fallbackImages = [
   focaccia,
@@ -24,8 +25,9 @@ function getRotatingFallback(index) {
 
 function MenuItem({ pizza, index }) {
   const dispatch = useDispatch();
-
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+  const currentQuantity = useSelector(getCurrentQuantityById(id));
+  const isInCart = currentQuantity > 0;
 
   function handleAddToCart() {
     const newItem = {
@@ -62,8 +64,9 @@ function MenuItem({ pizza, index }) {
               Sold out
             </p>
           )}
+          {isInCart && <DeleteItem id={id} />}
 
-          {!soldOut && (
+          {!soldOut && !isInCart && (
             <Button type="small" onClick={handleAddToCart}>
               Add to cart
             </Button>
