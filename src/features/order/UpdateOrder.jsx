@@ -7,7 +7,7 @@ function UpdateOrder({ order }) {
 
   return (
     <fetcher.Form method="PATCH" className="text-right">
-      <Button type="primary">make priority</Button>;
+      <Button type="primary">make priority</Button>
     </fetcher.Form>
   );
 }

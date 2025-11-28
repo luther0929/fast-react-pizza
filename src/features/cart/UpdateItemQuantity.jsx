@@ -6,7 +6,7 @@ function UpdateItemQuantity({ id, currentQuantity }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="md: flex items-center gap-2 md:gap-3">
+    <div className="md: ml-1 flex items-center gap-2 md:gap-3">
       <Button type="round" onClick={() => dispatch(decreaseItemQuantity(id))}>
         -
       </Button>
