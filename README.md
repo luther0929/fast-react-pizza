@@ -1,6 +1,6 @@
 # 🎮 Fast React Pizza – React + Vite + Tailwind
 
-A Pizza ordering webapp made for a mock client while learning **React Router** and **CSS Tailwind**.
+A Pizza ordering webapp made for a mock client while learning **React Router**, **Redux**, and **CSS Tailwind**.
 
 ---
 
@@ -10,7 +10,7 @@ A Pizza ordering webapp made for a mock client while learning **React Router** a
 ---
 
 ## 🧠 What I Learned
-- How to use modern **React Router**
+- How to use modern **React Router** with **Redux**
 - Fetching data from a backend server
 - Creating a **responsive layout** with **TailwindCSS**
 
